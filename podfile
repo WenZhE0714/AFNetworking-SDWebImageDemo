@@ -1,0 +1,5 @@
+target 'NetworkDemo' do
+pod 'AFNetworking'
+pod 'SDWebImage'
+pod ‘FMDB’
+end
