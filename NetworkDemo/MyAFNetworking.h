@@ -10,7 +10,7 @@
 
 @interface MyAFNetworking : AFURLSessionManager
 
--(void) sendRequest:(NSString *_Nonnull)urlString withDictionary:(NSDictionary *_Nonnull)dic doOperation:(void (^_Nonnull)(id _Nullable responseObject))doSomething;
+-(void) sendGetRequest:(NSString *_Nonnull)urlString doOperation:(void (^_Nonnull)(id _Nullable responseObject))doSomething;
 
 @end
 

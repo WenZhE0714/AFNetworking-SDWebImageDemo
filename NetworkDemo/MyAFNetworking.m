@@ -9,10 +9,13 @@
 #import "MyAFNetworking.h"
 
 @implementation MyAFNetworking
+-(instancetype)init{
+    return self;
+}
 
--(void) sendRequest:(NSString *_Nonnull)urlString withDictionary:(NSDictionary *_Nonnull)dic doOperation:(void (^_Nonnull)(id _Nullable responseObject))doSomething{
+-(void) sendGetRequest:(NSString *_Nonnull)urlString doOperation:(void (^_Nonnull)(id _Nullable responseObject))doSomething{
     AFHTTPSessionManager * session = [AFHTTPSessionManager manager];
-    [session GET:urlString parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [session GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         doSomething(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
          NSLog(@"failure--%@",error);

@@ -21,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *thirdPageButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UILabel *alertLabel;
-@property (strong,nonatomic) NSDictionary *dict;
--(void)loadJSONData;
+-(void)loadJSONData:(NSMutableDictionary *)data;
 @end
 

@@ -14,6 +14,7 @@
 @implementation ViewController
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
     //数据库
     NSString *filename = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"Data.db"];
     NSBundle *bundle = [NSBundle mainBundle];
@@ -41,16 +42,16 @@
     //        NSLog(@"failure--%@",error);
     //    }];
     
-    self.dict = [[NSMutableDictionary alloc]init];
     NSString *urlString = @"http://api.k780.com/?app=time.world_city&appkey=27222&sign=06e25b3ec3d01584a613cda39973e748&format=json";
     MyAFNetworking * network = [[MyAFNetworking alloc]init];
+    __weak typeof(self) weakSelf = self;
     
     //使用封装后的网络请求
-    [network sendRequest:urlString withDictionary:self.dict doOperation:^(id  _Nullable responseObject) {
-        self.dict = [NSMutableDictionary dictionaryWithDictionary:(NSMutableDictionary *)responseObject];
+    [network sendGetRequest:urlString doOperation:^(id  _Nullable responseObject) {
         //数据库操作
-        [self loadJSONData];
+        [weakSelf loadJSONData:(NSMutableDictionary *)responseObject];
     }];
+    
     
     //页面跳转按钮
     [self.nextPageButton addTarget:self action:@selector(turnToNextPage) forControlEvents:UIControlEventTouchUpInside];
@@ -58,8 +59,8 @@
     [self.db close];
 }
 
--(void)loadJSONData{
-    NSMutableDictionary *newDictionary = [self.dict valueForKey:@"result"];
+-(void)loadJSONData:(NSMutableDictionary *)data{
+    NSMutableDictionary *newDictionary = [data valueForKey:@"result"];
     //存数据
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         for (int i =0;i<[newDictionary allKeys].count;i++){
