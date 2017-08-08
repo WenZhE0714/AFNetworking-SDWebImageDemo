@@ -13,6 +13,7 @@
 #import "DataModel.h"
 #import "MyViewController.h"
 #import "ThirdViewController.h"
+#import "MyAFNetworking.h"
 
 @interface ViewController : UIViewController
 @property(nonatomic,strong)FMDatabase *db;

@@ -31,16 +31,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [_activityIndicator startAnimating];
-
+    
     //网络请求
-    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+    //    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+    //    [session GET:urlString parameters:self.dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    //        self.dict = [NSMutableDictionary dictionaryWithDictionary:(NSMutableDictionary *)responseObject];
+    //        [self loadJSONData];
+    //    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    //        NSLog(@"failure--%@",error);
+    //    }];
+    
     self.dict = [[NSMutableDictionary alloc]init];
-    [session GET:@"http://api.k780.com/?app=time.world_city&appkey=27222&sign=06e25b3ec3d01584a613cda39973e748&format=json" parameters:self.dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    NSString *urlString = @"http://api.k780.com/?app=time.world_city&appkey=27222&sign=06e25b3ec3d01584a613cda39973e748&format=json";
+    MyAFNetworking * network = [[MyAFNetworking alloc]init];
+    
+    //使用封装后的网络请求
+    [network sendRequest:urlString withDictionary:self.dict doOperation:^(id  _Nullable responseObject) {
         self.dict = [NSMutableDictionary dictionaryWithDictionary:(NSMutableDictionary *)responseObject];
         //数据库操作
         [self loadJSONData];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"failure--%@",error);
     }];
     
     //页面跳转按钮
@@ -96,6 +105,7 @@
     ThirdViewController *thirdViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"thirdController"];
     [self presentViewController:thirdViewController animated:YES completion:nil];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

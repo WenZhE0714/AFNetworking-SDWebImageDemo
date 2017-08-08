@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		040618301F383FBE00923609 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406182F1F383FBE00923609 /* ThirdViewController.m */; };
 		040618331F384C9700923609 /* ThirdTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040618321F384C9700923609 /* ThirdTableViewCell.m */; };
+		040618361F386C7C00923609 /* MyAFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 040618351F386C7C00923609 /* MyAFNetworking.m */; };
 		04C70ED11F33098800EC97FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C70ED01F33098800EC97FF /* main.m */; };
 		04C70ED41F33098800EC97FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C70ED31F33098800EC97FF /* AppDelegate.m */; };
 		04C70ED71F33098800EC97FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C70ED61F33098800EC97FF /* ViewController.m */; };
@@ -50,6 +51,8 @@
 		0406182F1F383FBE00923609 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		040618311F384C9700923609 /* ThirdTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdTableViewCell.h; sourceTree = "<group>"; };
 		040618321F384C9700923609 /* ThirdTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdTableViewCell.m; sourceTree = "<group>"; };
+		040618341F386C7C00923609 /* MyAFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAFNetworking.h; sourceTree = "<group>"; };
+		040618351F386C7C00923609 /* MyAFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAFNetworking.m; sourceTree = "<group>"; };
 		04C70ECC1F33098800EC97FF /* NetworkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C70ED01F33098800EC97FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04C70ED21F33098800EC97FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -104,6 +107,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040618371F386C8E00923609 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				04C70F041F33220D00EC97FF /* Data.db */,
+				04C70ED21F33098800EC97FF /* AppDelegate.h */,
+				04C70ED31F33098800EC97FF /* AppDelegate.m */,
+				04C70F081F33225800EC97FF /* DataModel.h */,
+				04C70F091F33225800EC97FF /* DataModel.m */,
+				040618341F386C7C00923609 /* MyAFNetworking.h */,
+				040618351F386C7C00923609 /* MyAFNetworking.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		040618391F386CAC00923609 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				04C70F911F381B7700EC97FF /* MyTableViewCell.h */,
+				04C70F921F381B7700EC97FF /* MyTableViewCell.m */,
+				040618311F384C9700923609 /* ThirdTableViewCell.h */,
+				040618321F384C9700923609 /* ThirdTableViewCell.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		0406183A1F386CB600923609 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				04C70ED51F33098800EC97FF /* ViewController.h */,
+				04C70ED61F33098800EC97FF /* ViewController.m */,
+				04C70F8E1F380B2600EC97FF /* MyViewController.h */,
+				04C70F8F1F380B2600EC97FF /* MyViewController.m */,
+				0406182E1F383FBE00923609 /* ThirdViewController.h */,
+				0406182F1F383FBE00923609 /* ThirdViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
 		04C70EC31F33098800EC97FF = {
 			isa = PBXGroup;
 			children = (
@@ -129,21 +170,9 @@
 		04C70ECE1F33098800EC97FF /* NetworkDemo */ = {
 			isa = PBXGroup;
 			children = (
-				04C70ED21F33098800EC97FF /* AppDelegate.h */,
-				04C70ED31F33098800EC97FF /* AppDelegate.m */,
-				04C70F041F33220D00EC97FF /* Data.db */,
-				04C70F081F33225800EC97FF /* DataModel.h */,
-				04C70F091F33225800EC97FF /* DataModel.m */,
-				04C70ED51F33098800EC97FF /* ViewController.h */,
-				04C70ED61F33098800EC97FF /* ViewController.m */,
-				04C70F911F381B7700EC97FF /* MyTableViewCell.h */,
-				04C70F921F381B7700EC97FF /* MyTableViewCell.m */,
-				04C70F8E1F380B2600EC97FF /* MyViewController.h */,
-				04C70F8F1F380B2600EC97FF /* MyViewController.m */,
-				040618311F384C9700923609 /* ThirdTableViewCell.h */,
-				040618321F384C9700923609 /* ThirdTableViewCell.m */,
-				0406182E1F383FBE00923609 /* ThirdViewController.h */,
-				0406182F1F383FBE00923609 /* ThirdViewController.m */,
+				040618371F386C8E00923609 /* model */,
+				040618391F386CAC00923609 /* view */,
+				0406183A1F386CB600923609 /* controller */,
 				04C70ED81F33098800EC97FF /* Main.storyboard */,
 				04C70EDB1F33098800EC97FF /* Assets.xcassets */,
 				04C70EDD1F33098800EC97FF /* LaunchScreen.storyboard */,
@@ -394,6 +423,7 @@
 				040618331F384C9700923609 /* ThirdTableViewCell.m in Sources */,
 				04C70F901F380B2600EC97FF /* MyViewController.m in Sources */,
 				040618301F383FBE00923609 /* ThirdViewController.m in Sources */,
+				040618361F386C7C00923609 /* MyAFNetworking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
