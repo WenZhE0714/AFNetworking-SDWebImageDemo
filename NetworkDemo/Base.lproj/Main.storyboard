@@ -223,42 +223,40 @@
                                 <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="kXx-ah-hZw" customClass="ThirdTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="kXx-ah-hZw" customClass="ThirdTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kXx-ah-hZw" id="XlV-Oc-8g6">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bbc-G7-gLz">
-                                                    <rect key="frame" x="10" y="5" width="60" height="46"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bbc-G7-gLz">
+                                                    <rect key="frame" x="18" y="28.5" width="80" height="41"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="U3h-5w-dnZ"/>
-                                                        <constraint firstAttribute="height" constant="46" id="Yf3-eX-Azm"/>
+                                                        <constraint firstAttribute="width" constant="80" id="yPY-r2-qwu"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contry_name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxN-7i-CSt">
-                                                    <rect key="frame" x="100" y="5" width="80" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="GaK-fd-pVu"/>
-                                                        <constraint firstAttribute="width" constant="80" id="gA7-oE-bWg"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="128" y="38.5" width="219" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="bbc-G7-gLz" firstAttribute="top" secondItem="XlV-Oc-8g6" secondAttribute="top" constant="5" id="EQG-Hc-Snr"/>
-                                                <constraint firstItem="gxN-7i-CSt" firstAttribute="top" secondItem="XlV-Oc-8g6" secondAttribute="top" constant="5" id="e0z-Eg-5v2"/>
-                                                <constraint firstItem="bbc-G7-gLz" firstAttribute="leading" secondItem="XlV-Oc-8g6" secondAttribute="leading" constant="10" id="euA-ss-4v3"/>
-                                                <constraint firstItem="gxN-7i-CSt" firstAttribute="leading" secondItem="bbc-G7-gLz" secondAttribute="trailing" constant="30" id="q8o-0h-tnu"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="gxN-7i-CSt" secondAttribute="bottom" constant="30" id="3Ei-OX-fAV"/>
+                                                <constraint firstItem="gxN-7i-CSt" firstAttribute="top" secondItem="XlV-Oc-8g6" secondAttribute="topMargin" constant="30" id="7gL-K0-Idk"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="bbc-G7-gLz" secondAttribute="bottom" constant="20" id="A27-MO-SFI"/>
+                                                <constraint firstItem="gxN-7i-CSt" firstAttribute="leading" secondItem="bbc-G7-gLz" secondAttribute="trailing" constant="30" id="GHx-KG-ipt"/>
+                                                <constraint firstItem="bbc-G7-gLz" firstAttribute="leading" secondItem="XlV-Oc-8g6" secondAttribute="leadingMargin" constant="10" id="cfO-V9-0jh" userLabel="Flag Image View.leading = leadingMargin + 10"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="gxN-7i-CSt" secondAttribute="trailing" constant="20" id="i5b-7l-3x2"/>
+                                                <constraint firstItem="bbc-G7-gLz" firstAttribute="centerY" secondItem="gxN-7i-CSt" secondAttribute="centerY" id="k5U-AK-BmH"/>
+                                                <constraint firstItem="bbc-G7-gLz" firstAttribute="top" secondItem="XlV-Oc-8g6" secondAttribute="topMargin" constant="20" id="wo5-Ad-o6M"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="countryLabel" destination="gxN-7i-CSt" id="P0s-6J-dFD"/>
                                             <outlet property="flagImageView" destination="bbc-G7-gLz" id="6Kl-9s-4MT"/>
-                                            <outlet property="imageView" destination="bbc-G7-gLz" id="BZR-Bc-IQU"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

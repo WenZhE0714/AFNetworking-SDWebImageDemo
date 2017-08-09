@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ThirdTableViewCell : UITableViewCell
+/**
+ 对应Main.storyboard -> ThirdViewController -> TableView ->cell的控件
+ */
 @property (weak, nonatomic) IBOutlet UIImageView *flagImageView;
 @property (weak, nonatomic) IBOutlet UILabel *countryLabel;
 @end

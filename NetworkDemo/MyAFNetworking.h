@@ -10,7 +10,13 @@
 
 @interface MyAFNetworking : AFURLSessionManager
 
--(void) sendGetRequest:(NSString *_Nonnull)urlString doOperation:(void (^_Nonnull)(id _Nullable responseObject))doSomething;
+/**
+ 封装AFNetworking的GET请求
+
+ @param urlString 服务器地址
+ @param doSomething 对返回的数据进行处理
+ */
+-(void) sendGetRequest:(NSString *_Nonnull)urlString doOperationBlock:(void (^_Nonnull)(id _Nullable responseObject))doSomething;
 
 @end
 

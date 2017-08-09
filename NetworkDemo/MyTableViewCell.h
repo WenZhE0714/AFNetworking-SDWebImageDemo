@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface MyTableViewCell : UITableViewCell
+/**
+ 对应Main.storyboard -> MyViewController -> TableView ->cell的控件
+ */
 @property (weak, nonatomic) IBOutlet UILabel *cityCnLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cityEnLabel;
 @property (weak, nonatomic) IBOutlet UILabel *continentsCnLabel;
